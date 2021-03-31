@@ -26,9 +26,9 @@ class AppCoordinator: TabBarCoordinator<AppRoute> {
         
         // now playing
         let nowPlaying = NowPlayingVC(
-            viewModel: NowPlayingVM(
+            viewModel: BrowseVM(
                 router: weakRouter,
-                useCase: NowPlayingUseCase(moviesRepository: MoviesRepositoryImpl())
+                useCase: BrowseUseCase(moviesRepository: MoviesRepositoryImpl(), browsing: .nowPlaying)
             )
         )
         let nowPlayingBarItem = TextyTabBarItem(title: "Now Playing", image: #imageLiteral(resourceName: "icon-play"), tag: 0)
@@ -36,8 +36,12 @@ class AppCoordinator: TabBarCoordinator<AppRoute> {
         nowPlaying.tabBarItem = nowPlayingBarItem
         
         // top rated
-        let topRated = UIViewController()
-        topRated.view.backgroundColor = .orange
+        let topRated = TopRatedVC(
+            viewModel: BrowseVM(
+                router: weakRouter,
+                useCase: BrowseUseCase(moviesRepository: MoviesRepositoryImpl(), browsing: .topRated)
+            )
+        )
         let topRatedBarItem = TextyTabBarItem(title: "Top Rated", image: #imageLiteral(resourceName: "icon-star"), tag: 1)
         topRatedBarItem.color = DesignSystem.Color.topRated.UIColor
         topRated.tabBarItem = topRatedBarItem

@@ -11,7 +11,7 @@ import RxCocoa
 import XCoordinator
 import XCoordinatorRx
 
-class NowPlayingVM: ViewModel {
+class BrowseVM: ViewModel {
     
     // MARK: - Inputs
     let input: Input
@@ -52,14 +52,14 @@ class NowPlayingVM: ViewModel {
     // MARK: - Private properties
     private let disposeBag = DisposeBag()
     private let router: WeakRouter<AppRoute>
-    private let useCase: NowPlayingUseCase
+    private let useCase: BrowseUseCase
     
     private let imageBaseURL = "https://image.tmdb.org/t/p/w500/"
     private var currentPage = 1
     private var moviesCellsVMs: [MovieCellVM] = []
     
     // MARK: - Initialization
-    init(router: WeakRouter<AppRoute>, useCase: NowPlayingUseCase) {
+    init(router: WeakRouter<AppRoute>, useCase: BrowseUseCase) {
         self.router = router
         self.useCase = useCase
         
@@ -85,10 +85,11 @@ class NowPlayingVM: ViewModel {
             .startLoadingOn(isLoadingSubject)
             .flatMap { [weak self] _ -> Single<Page<Movie>> in
                 guard let self = self else { return .error(AppError.networkError) }
-                return self.useCase.getNowPlayingMovies(page: self.currentPage)
+                return self.useCase.getMovies(page: self.currentPage)
             }
             .stopLoadingOn(isLoadingSubject)
             .stopLoadingOn(isRefreshingSubject)
+            .stopLoadingOn(isLoadingNextPageSubject)
             .subscribe(onNext: { [weak self] page in
                 guard let self = self else { return }
                 self.moviesCellsVMs = self.buildMoviesCellsVMs(page.results)
@@ -97,11 +98,16 @@ class NowPlayingVM: ViewModel {
                 guard let self = self else { return }
                 debugPrint("error getting now playing Movies: \(error)")
                 self.isLoadingSubject.onNext(false)
+                self.isRefreshingSubject.onNext(false)
                 self.errorSubject.onNext(error as? AppError ?? .with(message: error.localizedDescription))
             })
             .disposed(by: disposeBag)
-        
+                
         loadNextPageSubject
+            .skipUntil(isLoadingSubject)
+            .withLatestFrom(isLoadingNextPageSubject)
+            .filter { !$0 }
+            .map { _ in () }
             .do(onNext: { [weak self] in self?.currentPage += 1 })
             .filter { [weak self] in
                 guard let self = self else { return false }
@@ -110,7 +116,7 @@ class NowPlayingVM: ViewModel {
             .startLoadingOn(isLoadingNextPageSubject)
             .flatMap { [weak self] _ -> Single<Page<Movie>> in
                 guard let self = self else { return .error(AppError.networkError) }
-                return self.useCase.getNowPlayingMovies(page: self.currentPage)
+                return self.useCase.getMovies(page: self.currentPage)
             }
             .stopLoadingOn(isLoadingNextPageSubject)
             .subscribe(onNext: { [weak self] page in

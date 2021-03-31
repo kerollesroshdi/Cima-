@@ -1,14 +1,13 @@
 //
-//  NowPlayingVC.swift
+//  TopRatedVC.swift
 //  Cima+
 //
-//  Created by Kerolles Roshdi on 3/31/21.
+//  Created by Kerolles Roshdi on 4/1/21.
 //
 
 import UIKit
-import RxSwift
 
-class NowPlayingVC: BaseViewController<BrowseVM> {
+class TopRatedVC: BaseViewController<BrowseVM> {
 
     @IBOutlet weak var tableView: UITableView!
     private let loadingIndicator: UIActivityIndicatorView = {
@@ -18,14 +17,14 @@ class NowPlayingVC: BaseViewController<BrowseVM> {
     }()
     private let refresher: UIRefreshControl = {
         let refresh = UIRefreshControl()
-        refresh.tintColor = DesignSystem.Color.nowPlaying.UIColor
+        refresh.tintColor = DesignSystem.Color.topRated.UIColor
         refresh.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
         return refresh
     }()
     private let nextPageLoadingIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(frame: .init(x: 0, y: 0, width: 50, height: 50))
         indicator.hidesWhenStopped = true
-        indicator.color = DesignSystem.Color.nowPlaying.UIColor
+        indicator.color = DesignSystem.Color.topRated.UIColor
         indicator.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
         indicator.startAnimating()
         indicator.isHidden = true
@@ -38,7 +37,7 @@ class NowPlayingVC: BaseViewController<BrowseVM> {
         setupViews()
         bind()
     }
-
+    
     private func setupViews() {
         // tableview setup
         tableView.registerCellNib(cellClass: MovieCell.self)
@@ -100,7 +99,7 @@ class NowPlayingVC: BaseViewController<BrowseVM> {
             .bind(to: viewModel.input.selectedMovie)
             .disposed(by: disposeBag)
     }
-    
+
     private func setupStateViewWith(_ error :AppError?) {
         if let error = error {
             view.addSubview(stateView)
@@ -110,5 +109,4 @@ class NowPlayingVC: BaseViewController<BrowseVM> {
             stateView.removeFromSuperview()
         }
     }
-    
 }
