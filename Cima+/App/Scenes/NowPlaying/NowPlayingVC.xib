@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NowPlayingVC" customModule="Cima_" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="yCX-H3-vUc" id="JlR-G4-Bno"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="125" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yCX-H3-vUc">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <view key="tableHeaderView" contentMode="scaleToFill" id="FaB-6i-gpa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="57"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now Playing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j59-kh-Cd3">
+                                <rect key="frame" x="20" y="15" width="374" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <color key="textColor" name="nowPlaying"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="j59-kh-Cd3" secondAttribute="trailing" constant="20" id="7V0-j7-z8e"/>
+                            <constraint firstItem="j59-kh-Cd3" firstAttribute="leading" secondItem="FaB-6i-gpa" secondAttribute="leading" constant="20" id="qIi-gi-Rlh"/>
+                            <constraint firstItem="j59-kh-Cd3" firstAttribute="centerY" secondItem="FaB-6i-gpa" secondAttribute="centerY" id="zBi-Fi-uG8"/>
+                        </constraints>
+                    </view>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="background"/>
+            <constraints>
+                <constraint firstItem="yCX-H3-vUc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="FhR-kW-18t"/>
+                <constraint firstItem="yCX-H3-vUc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kVB-7C-Wpx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="yCX-H3-vUc" secondAttribute="bottom" id="qmB-B7-mYm"/>
+                <constraint firstItem="yCX-H3-vUc" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="xv0-cK-PCe"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="13.043478260869566" y="103.79464285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="background">
+            <color red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="nowPlaying">
+            <color red="0.96078431372549022" green="0.44705882352941173" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>
