@@ -16,7 +16,7 @@ class SearchUseCase {
         self.moviesRepository = moviesRepository
     }
     
-    func searchWith(_ text: String, page: Int) -> Single<Page<Movie>> {
+    func searchWith(_ text: String, page: Int) -> Observable<Page<Movie>> {
         moviesRepository.searchWith(text, page: page)
     }
     

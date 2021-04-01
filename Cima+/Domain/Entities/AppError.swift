@@ -25,7 +25,7 @@ extension AppError: LocalizedError {
         case .offline:
             return NSLocalizedString("error_offline", comment: "Offline")
         case .networkError:
-            return NSLocalizedString("error_serverError", comment: "Network error")
+            return NSLocalizedString("error_networkError", comment: "Network error")
         case .notFound:
             return NSLocalizedString("error_notFound", comment: "Not found")
         case .with(let message):
@@ -49,23 +49,23 @@ extension AppError {
     var image: String {
         switch self {
         case .offline:
-            return ""
+            return "image_illustration_error"
         case .networkError:
-            return ""
+            return "image_illustration_error"
         case .notFound:
-            return ""
+            return "image_illustration_notFound"
         case .with:
-            return ""
+            return "image_illustration_error"
         case .empty:
-            return ""
+            return "image_illustration_search"
         case .timeout:
-            return ""
+            return "image_illustration_sleep"
         case .unauthorized:
-            return ""
+            return "image_illustration_error"
         case .badRequest:
-            return ""
+            return "image_illustration_error"
         case .serverError:
-            return ""
+            return "image_illustration_error"
         }
     }
     

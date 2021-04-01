@@ -84,21 +84,25 @@ class SearchVM: ViewModel {
             })
             .filter { !$0.isEmpty }
             .startLoadingOn(isLoadingSubject)
-            .flatMap { [weak self] text -> Single<Page<Movie>> in
+            .flatMap { [weak self] text -> Observable<Event<Page<Movie>>> in
                 guard let self = self else { return .error(AppError.networkError) }
-                return self.useCase.searchWith(text, page: self.currentPage)
+                return self.useCase.searchWith(text, page: self.currentPage).materialize()
             }
             .stopLoadingOn(isLoadingSubject)
             .stopLoadingOn(isLoadingNextPageSubject)
-            .subscribe(onNext: { [weak self] page in
+            .subscribe(onNext: { [weak self] event in
                 guard let self = self else { return }
-                self.moviesCellsVMs = self.buildMoviesCellsVMs(page.results)
-                self.moviesCellsVMsSubject.onNext(self.moviesCellsVMs)
-            }, onError: { [weak self] error in
-                guard let self = self else { return }
-                debugPrint("error getting now playing Movies: \(error)")
-                self.isLoadingSubject.onNext(false)
-                self.errorSubject.onNext(error as? AppError ?? .with(message: error.localizedDescription))
+                switch event {
+                case .next(let page):
+                    self.moviesCellsVMs = self.buildMoviesCellsVMs(page.results)
+                    self.moviesCellsVMsSubject.onNext(self.moviesCellsVMs)
+                case .error(let error):
+                    debugPrint("error getting now playing Movies: \(error)")
+                    self.isLoadingSubject.onNext(false)
+                    self.errorSubject.onNext(error as? AppError ?? .with(message: error.localizedDescription))
+                default:
+                    break
+                }
             })
             .disposed(by: disposeBag)
         
@@ -113,19 +117,23 @@ class SearchVM: ViewModel {
                 return self.currentPage < 999
             }
             .startLoadingOn(isLoadingNextPageSubject)
-            .flatMap { [weak self] _ -> Single<Page<Movie>> in
+            .flatMap { [weak self] _ -> Observable<Event<Page<Movie>>> in
                 guard let self = self else { return .error(AppError.networkError) }
-                return self.useCase.searchWith(self.searchText, page: self.currentPage)
+                return self.useCase.searchWith(self.searchText, page: self.currentPage).materialize()
             }
             .stopLoadingOn(isLoadingNextPageSubject)
-            .subscribe(onNext: { [weak self] page in
+            .subscribe(onNext: { [weak self] event in
                 guard let self = self else { return }
-                self.moviesCellsVMs += self.buildMoviesCellsVMs(page.results)
-                self.moviesCellsVMsSubject.onNext(self.moviesCellsVMs)
-            }, onError: { [weak self] error in
-                guard let self = self else { return }
-                debugPrint("error getting now playing Movies: \(error)")
-                self.isLoadingNextPageSubject.onNext(false)
+                switch event {
+                case .next(let page):
+                    self.moviesCellsVMs += self.buildMoviesCellsVMs(page.results)
+                    self.moviesCellsVMsSubject.onNext(self.moviesCellsVMs)
+                case .error(let error):
+                    debugPrint("error getting now playing Movies: \(error)")
+                    self.isLoadingNextPageSubject.onNext(false)
+                default :
+                    break
+                }
             })
             .disposed(by: disposeBag)
         

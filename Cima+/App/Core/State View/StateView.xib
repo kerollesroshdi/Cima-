@@ -8,11 +8,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Cairo-SemiBold.ttf">
-            <string>Cairo-SemiBold</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StateView" customModule="Cima_" customModuleProvider="target">
             <connections>
@@ -30,28 +25,30 @@
                     <rect key="frame" x="62" y="303" width="290" height="290"/>
                     <subviews>
                         <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kre-gQ-2se">
-                            <rect key="frame" x="54" y="80.5" width="182" height="129"/>
+                            <rect key="frame" x="25" y="55" width="240" height="180.5"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jqf-g0-ghk">
-                                    <rect key="frame" x="41" y="0.0" width="100" height="100"/>
+                                    <rect key="frame" x="20" y="0.0" width="200" height="150"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="100" id="M6H-BL-08h"/>
-                                        <constraint firstAttribute="width" constant="100" id="W23-ab-WPu"/>
+                                        <constraint firstAttribute="height" constant="150" id="M6H-BL-08h"/>
+                                        <constraint firstAttribute="width" constant="200" id="W23-ab-WPu"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="State Message goes here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceN-fE-6g4">
-                                    <rect key="frame" x="0.0" y="110" width="182" height="19"/>
-                                    <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="16"/>
+                                    <rect key="frame" x="34" y="160" width="172" height="20.5"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
                                     <color key="textColor" name="title"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="kre-gQ-2se" secondAttribute="trailing" constant="25" id="9m8-9l-iEy"/>
                         <constraint firstAttribute="width" secondItem="eMA-j7-GbA" secondAttribute="height" multiplier="1:1" id="aXH-Fm-1ir"/>
                         <constraint firstItem="kre-gQ-2se" firstAttribute="centerY" secondItem="eMA-j7-GbA" secondAttribute="centerY" id="bvA-yI-GjV"/>
+                        <constraint firstItem="kre-gQ-2se" firstAttribute="leading" secondItem="eMA-j7-GbA" secondAttribute="leading" constant="25" id="ehO-by-cz5"/>
                         <constraint firstItem="kre-gQ-2se" firstAttribute="centerX" secondItem="eMA-j7-GbA" secondAttribute="centerX" id="m7d-A7-dCq"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
@@ -73,7 +70,7 @@
     </objects>
     <resources>
         <namedColor name="title">
-            <color red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.22699999809265137" green="0.22699999809265137" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

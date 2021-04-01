@@ -23,6 +23,8 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == Response {
                 throw AppError.notFound
             case 408, -1001:
                 throw AppError.timeout
+            case -1009:
+                throw AppError.offline
             case 500:
                 throw AppError.serverError
             default:

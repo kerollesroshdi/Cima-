@@ -56,6 +56,14 @@
 		C5A1D1DF2615BC2D00A84C87 /* SearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A1D1DD2615BC2D00A84C87 /* SearchVC.xib */; };
 		C5A1D1E22615BC3F00A84C87 /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A1D1E12615BC3F00A84C87 /* SearchVM.swift */; };
 		C5A1D1E62615BFF100A84C87 /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A1D1E52615BFF100A84C87 /* SearchUseCase.swift */; };
+		C5A1D1EB2615D77E00A84C87 /* MovieDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A1D1E92615D77E00A84C87 /* MovieDetailsVC.swift */; };
+		C5A1D1EC2615D77E00A84C87 /* MovieDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A1D1EA2615D77E00A84C87 /* MovieDetailsVC.xib */; };
+		C5A1D1EF2615D79400A84C87 /* MovieDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A1D1EE2615D79400A84C87 /* MovieDetailsVM.swift */; };
+		C5A1D1F32615E98500A84C87 /* MovieDetailsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A1D1F22615E98500A84C87 /* MovieDetailsUseCase.swift */; };
+		C5A1D1F82615F27700A84C87 /* GenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A1D1F62615F27700A84C87 /* GenreCell.swift */; };
+		C5A1D1F92615F27700A84C87 /* GenreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A1D1F72615F27700A84C87 /* GenreCell.xib */; };
+		C5A1D1FD2616090400A84C87 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = C5A1D1FC2616090400A84C87 /* SkeletonView */; };
+		C5A1D20126161F7200A84C87 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5A1D20026161F7200A84C87 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +111,13 @@
 		C5A1D1DD2615BC2D00A84C87 /* SearchVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchVC.xib; sourceTree = "<group>"; };
 		C5A1D1E12615BC3F00A84C87 /* SearchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVM.swift; sourceTree = "<group>"; };
 		C5A1D1E52615BFF100A84C87 /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
+		C5A1D1E92615D77E00A84C87 /* MovieDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsVC.swift; sourceTree = "<group>"; };
+		C5A1D1EA2615D77E00A84C87 /* MovieDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailsVC.xib; sourceTree = "<group>"; };
+		C5A1D1EE2615D79400A84C87 /* MovieDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsVM.swift; sourceTree = "<group>"; };
+		C5A1D1F22615E98500A84C87 /* MovieDetailsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieDetailsUseCase.swift; path = ../../../../../MovieDetailsUseCase.swift; sourceTree = "<group>"; };
+		C5A1D1F62615F27700A84C87 /* GenreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCell.swift; sourceTree = "<group>"; };
+		C5A1D1F72615F27700A84C87 /* GenreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreCell.xib; sourceTree = "<group>"; };
+		C5A1D20026161F7200A84C87 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +129,7 @@
 				C5786A6626150AFD00EECECF /* SDWebImage in Frameworks */,
 				C51A2D4B2613CA810095E095 /* RxCocoa in Frameworks */,
 				C51A2D472613C8AA0095E095 /* RxMoya in Frameworks */,
+				C5A1D1FD2616090400A84C87 /* SkeletonView in Frameworks */,
 				C51A2D4D2613CA810095E095 /* RxSwift in Frameworks */,
 				C51A2D452613C8AA0095E095 /* Moya in Frameworks */,
 				C51A2D512613CB8E0095E095 /* XCoordinator in Frameworks */,
@@ -135,6 +151,7 @@
 		C51A2D322613BF4D0095E095 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				C5A1D1FF26161F4200A84C87 /* Strings */,
 				C5786A552615058500EECECF /* Design System */,
 				C51EECA42612583400C6B552 /* Assets.xcassets */,
 			);
@@ -149,6 +166,7 @@
 				C5786A432614EA5200EECECF /* NowPlaying */,
 				C5786A7826152DCC00EECECF /* TopRated */,
 				C5A1D1DB2615BC0D00A84C87 /* Search */,
+				C5A1D1E82615D76400A84C87 /* MovieDetails */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -210,6 +228,7 @@
 			children = (
 				C5786A6826150BDB00EECECF /* BrowseUseCase.swift */,
 				C5A1D1E52615BFF100A84C87 /* SearchUseCase.swift */,
+				C5A1D1F22615E98500A84C87 /* MovieDetailsUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -330,6 +349,7 @@
 		C5786A4E2614FA3A00EECECF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				C5A1D1F52615F25F00A84C87 /* GenreCell */,
 				C5786A4F2614FA4400EECECF /* MovieCell */,
 			);
 			path = Cells;
@@ -397,6 +417,33 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		C5A1D1E82615D76400A84C87 /* MovieDetails */ = {
+			isa = PBXGroup;
+			children = (
+				C5A1D1EE2615D79400A84C87 /* MovieDetailsVM.swift */,
+				C5A1D1E92615D77E00A84C87 /* MovieDetailsVC.swift */,
+				C5A1D1EA2615D77E00A84C87 /* MovieDetailsVC.xib */,
+			);
+			path = MovieDetails;
+			sourceTree = "<group>";
+		};
+		C5A1D1F52615F25F00A84C87 /* GenreCell */ = {
+			isa = PBXGroup;
+			children = (
+				C5A1D1F62615F27700A84C87 /* GenreCell.swift */,
+				C5A1D1F72615F27700A84C87 /* GenreCell.xib */,
+			);
+			path = GenreCell;
+			sourceTree = "<group>";
+		};
+		C5A1D1FF26161F4200A84C87 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				C5A1D20026161F7200A84C87 /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -421,6 +468,7 @@
 				C51A2D502613CB8E0095E095 /* XCoordinator */,
 				C5786A6526150AFD00EECECF /* SDWebImage */,
 				C5786A7226152CC500EECECF /* XCoordinatorRx */,
+				C5A1D1FC2616090400A84C87 /* SkeletonView */,
 			);
 			productName = "Cima+";
 			productReference = C51EEC982612583300C6B552 /* Cima+.app */;
@@ -454,6 +502,7 @@
 				C51A2D492613CA810095E095 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				C51A2D4F2613CB8E0095E095 /* XCRemoteSwiftPackageReference "XCoordinator" */,
 				C5786A6426150AFD00EECECF /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				C5A1D1FB2616090400A84C87 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = C51EEC992612583300C6B552 /* Products */;
 			projectDirPath = "";
@@ -471,9 +520,12 @@
 			files = (
 				C51EECA82612583400C6B552 /* LaunchScreen.storyboard in Resources */,
 				C5A1D1DF2615BC2D00A84C87 /* SearchVC.xib in Resources */,
+				C5A1D1EC2615D77E00A84C87 /* MovieDetailsVC.xib in Resources */,
 				C5786A6F261520A000EECECF /* StateView.xib in Resources */,
 				C5786A482614EA9100EECECF /* NowPlayingVC.xib in Resources */,
+				C5A1D20126161F7200A84C87 /* Localizable.strings in Resources */,
 				C5786A532614FA5D00EECECF /* MovieCell.xib in Resources */,
+				C5A1D1F92615F27700A84C87 /* GenreCell.xib in Resources */,
 				C51EECA52612583400C6B552 /* Assets.xcassets in Resources */,
 				C5786A822615303000EECECF /* TopRatedVC.xib in Resources */,
 			);
@@ -489,6 +541,7 @@
 				C5A1D1E62615BFF100A84C87 /* SearchUseCase.swift in Sources */,
 				C5A1D1E22615BC3F00A84C87 /* SearchVM.swift in Sources */,
 				C5786A5C2615058A00EECECF /* DesignSystem.swift in Sources */,
+				C5A1D1F32615E98500A84C87 /* MovieDetailsUseCase.swift in Sources */,
 				C5786A522614FA5D00EECECF /* MovieCell.swift in Sources */,
 				C51EECD026125C3E00C6B552 /* TextyTabBarController.swift in Sources */,
 				C51A2D412613C1500095E095 /* RxSwift+Moya+Extensions.swift in Sources */,
@@ -500,12 +553,14 @@
 				C51A2D6F261406540095E095 /* MoviesRepositoryImpl.swift in Sources */,
 				C5786A472614EA9100EECECF /* NowPlayingVC.swift in Sources */,
 				C5786A4B2614EAB100EECECF /* BrowseVM.swift in Sources */,
+				C5A1D1EB2615D77E00A84C87 /* MovieDetailsVC.swift in Sources */,
 				C5A1D1DE2615BC2D00A84C87 /* SearchVC.swift in Sources */,
 				C5786A5B2615058A00EECECF /* Color.swift in Sources */,
 				C51A2D3E2613C0DE0095E095 /* AppError.swift in Sources */,
 				C51A2D7F261407A80095E095 /* UICollectionViewNibExtension.swift in Sources */,
 				C5786A622615095B00EECECF /* MovieCellVM.swift in Sources */,
 				C51A2D762614073A0095E095 /* ViewModel.swift in Sources */,
+				C5A1D1EF2615D79400A84C87 /* MovieDetailsVM.swift in Sources */,
 				C51A2D552613F7280095E095 /* Page.swift in Sources */,
 				C51A2D622613FEBD0095E095 /* MoyaHelper.swift in Sources */,
 				C51EECCB26125ACB00C6B552 /* AppCoordinator.swift in Sources */,
@@ -521,6 +576,7 @@
 				C5786A6926150BDB00EECECF /* BrowseUseCase.swift in Sources */,
 				C51A2D5E2613FDB60095E095 /* Genre.swift in Sources */,
 				C51A2D80261407A80095E095 /* UIScrollView+Extensions.swift in Sources */,
+				C5A1D1F82615F27700A84C87 /* GenreCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,6 +806,14 @@
 				minimumVersion = 5.10.4;
 			};
 		};
+		C5A1D1FB2616090400A84C87 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.13.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -787,6 +851,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C51A2D4F2613CB8E0095E095 /* XCRemoteSwiftPackageReference "XCoordinator" */;
 			productName = XCoordinatorRx;
+		};
+		C5A1D1FC2616090400A84C87 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5A1D1FB2616090400A84C87 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

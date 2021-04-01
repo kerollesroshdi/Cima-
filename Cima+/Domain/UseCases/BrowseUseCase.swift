@@ -23,7 +23,7 @@ class BrowseUseCase {
         self.browsing = browsing
     }
     
-    func getMovies(page: Int) -> Single<Page<Movie>> {
+    func getMovies(page: Int) -> Observable<Page<Movie>> {
         switch browsing {
         case .nowPlaying:
             return moviesRepository.getNowPlaying(page: page)

@@ -10,13 +10,14 @@ import Foundation
 struct MovieDetails: Decodable {
     let isPlus18: Bool
     let title: String
-    let posterPath: String
-    let backdropPath: String
+    let posterPath: String?
+    let backdropPath: String?
     let overview: String
     let genres: [Genre]
     let runTime: Int
     let releaseDate: String
     let vote: Double
+    let voteCount: Int
     
     enum CodingKeys: String, CodingKey {
         case isPlus18 = "adult"
@@ -28,5 +29,6 @@ struct MovieDetails: Decodable {
         case runTime = "runtime"
         case releaseDate = "release_date"
         case vote = "vote_average"
+        case voteCount = "vote_count"
     }
 }

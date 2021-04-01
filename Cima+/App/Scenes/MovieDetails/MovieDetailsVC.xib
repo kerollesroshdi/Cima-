@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieDetailsVC" customModule="Cima_" customModuleProvider="target">
+            <connections>
+                <outlet property="backdropImageView" destination="AQB-uX-7tE" id="VaA-SF-1VE"/>
+                <outlet property="closeButton" destination="xYJ-Eu-aAG" id="nxH-Xe-o79"/>
+                <outlet property="genresCollectionView" destination="xUc-9u-eza" id="Axs-PN-9Bv"/>
+                <outlet property="movieTitleLabel" destination="XGh-TZ-oBd" id="cc3-VG-jCh"/>
+                <outlet property="overviewTextView" destination="XF7-i0-dNf" id="5PE-uQ-tYd"/>
+                <outlet property="posterImageView" destination="F9m-45-Uud" id="y2F-gr-606"/>
+                <outlet property="releaseDateLabel" destination="gqJ-In-3SN" id="x0e-ir-brB"/>
+                <outlet property="runtimeLabel" destination="GZc-6R-gQl" id="diL-eT-agN"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="voteCountLabel" destination="lBR-zC-bdA" id="cxa-Rm-18b"/>
+                <outlet property="voteLabel" destination="bMV-61-jCl" id="h1L-rj-SWA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AQB-uX-7tE">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="295.5"/>
+                    <color key="backgroundColor" name="background"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <visualEffectView opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V86-v7-jdG">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="295.5"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SBI-rn-4ZD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="295.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="systemUltraThinMaterialLight"/>
+                </visualEffectView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62k-JX-dc2">
+                    <rect key="frame" x="0.0" y="255.5" width="414" height="640.5"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="WhC-di-ZGD">
+                            <rect key="frame" x="186.5" y="32.5" width="207.5" height="81.5"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="lastBaseline" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fer-um-TZe">
+                                    <rect key="frame" x="0.0" y="0.0" width="143.5" height="45.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="7.4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMV-61-jCl">
+                                            <rect key="frame" x="0.0" y="0.0" width="49" height="45.5"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="33"/>
+                                            <color key="textColor" name="vote"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="5667 votes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBR-zC-bdA">
+                                            <rect key="frame" x="54" y="15" width="89.5" height="25"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                            <color key="textColor" name="subtitle"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="L6L-aX-i9Y">
+                                    <rect key="frame" x="0.0" y="45.5" width="148.5" height="18"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Release Date :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umU-8B-KC4">
+                                            <rect key="frame" x="0.0" y="2" width="67.5" height="14"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="10"/>
+                                            <color key="textColor" name="title"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 Mar 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqJ-In-3SN">
+                                            <rect key="frame" x="70.5" y="0.0" width="78" height="18"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="13"/>
+                                            <color key="textColor" name="releaseDate"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="by1-o9-xBI">
+                                    <rect key="frame" x="0.0" y="63.5" width="89.5" height="18"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Runtime :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fy8-jE-mqs">
+                                            <rect key="frame" x="0.0" y="2" width="45" height="14"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="10"/>
+                                            <color key="textColor" name="title"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZc-6R-gQl">
+                                            <rect key="frame" x="48" y="0.0" width="41.5" height="18"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="13"/>
+                                            <color key="textColor" name="search"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </stackView>
+                            </subviews>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Movie title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGh-TZ-oBd">
+                            <rect key="frame" x="30" y="141" width="354" height="45.5"/>
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="33"/>
+                            <color key="textColor" name="title"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                    <integer key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xUc-9u-eza">
+                            <rect key="frame" x="0.0" y="196.5" width="414" height="35"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="Zxo-HB-zB0"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hWS-Uc-dPZ">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                    <real key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </collectionView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XF7-i0-dNf">
+                            <rect key="frame" x="30" y="241.5" width="354" height="345"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="tintColor" name="releaseDate"/>
+                            <color key="textColor" name="subtitle"/>
+                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                    <integer key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="lastLineFillPercent">
+                                    <integer key="value" value="70"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="WhC-di-ZGD" secondAttribute="trailing" constant="20" id="0T4-JF-pxN"/>
+                        <constraint firstItem="xUc-9u-eza" firstAttribute="top" secondItem="XGh-TZ-oBd" secondAttribute="bottom" constant="10" id="35L-D6-0L8"/>
+                        <constraint firstAttribute="trailing" secondItem="XGh-TZ-oBd" secondAttribute="trailing" constant="30" id="BaI-Vg-pSn"/>
+                        <constraint firstAttribute="trailing" secondItem="xUc-9u-eza" secondAttribute="trailing" id="Gke-dc-zx4"/>
+                        <constraint firstItem="XGh-TZ-oBd" firstAttribute="leading" secondItem="62k-JX-dc2" secondAttribute="leading" constant="30" id="OLR-zf-1jX"/>
+                        <constraint firstItem="xUc-9u-eza" firstAttribute="leading" secondItem="62k-JX-dc2" secondAttribute="leading" id="S0F-mW-KMB"/>
+                        <constraint firstItem="XF7-i0-dNf" firstAttribute="top" secondItem="xUc-9u-eza" secondAttribute="bottom" constant="10" id="gby-jV-09k"/>
+                        <constraint firstItem="XF7-i0-dNf" firstAttribute="leading" secondItem="62k-JX-dc2" secondAttribute="leading" constant="30" id="pdh-Rd-NXz"/>
+                        <constraint firstAttribute="trailing" secondItem="XF7-i0-dNf" secondAttribute="trailing" constant="30" id="thF-a5-3jL"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="onlyTopCornerMasks" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qeE-vi-SIH">
+                    <rect key="frame" x="30" y="210.5" width="136.5" height="171"/>
+                    <color key="backgroundColor" name="background"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="0.29999999999999999"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" name="title"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F9m-45-Uud">
+                    <rect key="frame" x="30" y="210.5" width="136.5" height="171"/>
+                    <color key="backgroundColor" name="background"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="F9m-45-Uud" secondAttribute="height" multiplier="0.8 : 1" id="JyL-EN-a1w"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYJ-Eu-aAG">
+                    <rect key="frame" x="30" y="54" width="30" height="30"/>
+                    <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="0.60243730355572223" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="1Uj-L7-04N"/>
+                        <constraint firstAttribute="width" constant="30" id="YEb-aq-R3K"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="icon-x"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isCapsule" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="qeE-vi-SIH" firstAttribute="width" secondItem="F9m-45-Uud" secondAttribute="width" id="3ln-fy-T36"/>
+                <constraint firstItem="qeE-vi-SIH" firstAttribute="centerY" secondItem="F9m-45-Uud" secondAttribute="centerY" id="8AD-so-4YA"/>
+                <constraint firstItem="F9m-45-Uud" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="CtK-Qj-eIR"/>
+                <constraint firstItem="XGh-TZ-oBd" firstAttribute="top" secondItem="F9m-45-Uud" secondAttribute="bottom" constant="15" id="DgD-7D-Yal"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="XF7-i0-dNf" secondAttribute="bottom" constant="20" id="LCw-FQ-p9T"/>
+                <constraint firstItem="62k-JX-dc2" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="MjR-Cz-fxT"/>
+                <constraint firstItem="qeE-vi-SIH" firstAttribute="height" secondItem="F9m-45-Uud" secondAttribute="height" id="RCF-or-77F"/>
+                <constraint firstItem="AQB-uX-7tE" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="RT5-aB-Pu5"/>
+                <constraint firstItem="F9m-45-Uud" firstAttribute="bottom" secondItem="WhC-di-ZGD" secondAttribute="bottom" constant="12" id="UK9-aG-49X"/>
+                <constraint firstItem="V86-v7-jdG" firstAttribute="bottom" secondItem="AQB-uX-7tE" secondAttribute="bottom" id="XFv-7g-rAT"/>
+                <constraint firstItem="qeE-vi-SIH" firstAttribute="centerX" secondItem="F9m-45-Uud" secondAttribute="centerX" id="XUu-OA-K7m"/>
+                <constraint firstAttribute="bottom" secondItem="62k-JX-dc2" secondAttribute="bottom" id="buf-lk-NMp"/>
+                <constraint firstItem="V86-v7-jdG" firstAttribute="top" secondItem="AQB-uX-7tE" secondAttribute="top" id="c37-VF-KA4"/>
+                <constraint firstItem="AQB-uX-7tE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ccx-C4-XAM"/>
+                <constraint firstItem="AQB-uX-7tE" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.33" id="cu5-BJ-woW"/>
+                <constraint firstItem="xYJ-Eu-aAG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="i2b-ix-fy7"/>
+                <constraint firstItem="62k-JX-dc2" firstAttribute="top" secondItem="F9m-45-Uud" secondAttribute="top" constant="45" id="j9f-GI-Q19"/>
+                <constraint firstItem="xYJ-Eu-aAG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="jkh-CK-15r"/>
+                <constraint firstItem="WhC-di-ZGD" firstAttribute="leading" secondItem="F9m-45-Uud" secondAttribute="trailing" constant="20" id="lJd-kO-Vxt"/>
+                <constraint firstItem="F9m-45-Uud" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.33" id="lia-fk-SlE"/>
+                <constraint firstItem="V86-v7-jdG" firstAttribute="leading" secondItem="AQB-uX-7tE" secondAttribute="leading" id="nH0-ra-Icc"/>
+                <constraint firstItem="V86-v7-jdG" firstAttribute="trailing" secondItem="AQB-uX-7tE" secondAttribute="trailing" id="ogw-je-eey"/>
+                <constraint firstItem="62k-JX-dc2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="op9-xB-sMx"/>
+                <constraint firstItem="AQB-uX-7tE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pvT-tl-R3B"/>
+                <constraint firstItem="AQB-uX-7tE" firstAttribute="bottom" secondItem="62k-JX-dc2" secondAttribute="top" constant="40" id="tY2-QZ-LRf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="-220.28985507246378" y="103.79464285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon-x" width="15" height="15"/>
+        <namedColor name="background">
+            <color red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="releaseDate">
+            <color red="0.59607843137254901" green="0.85098039215686272" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="search">
+            <color red="0.39215686274509803" green="0.41176470588235292" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="subtitle">
+            <color red="0.69803921568627447" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="title">
+            <color red="0.22699999809265137" green="0.22699999809265137" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="vote">
+            <color red="1" green="0.73725490196078436" blue="0.015686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

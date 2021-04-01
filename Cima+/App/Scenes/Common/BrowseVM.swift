@@ -81,25 +81,33 @@ class BrowseVM: ViewModel {
         )
         
         Observable.merge(viewDidLoadSubject, pulledToRefreshSubject)
-            .do(onNext: { [weak self] in self?.currentPage = 1 })
+            .do(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.currentPage = 1
+                self.errorSubject.onNext(nil)
+            })
             .startLoadingOn(isLoadingSubject)
-            .flatMap { [weak self] _ -> Single<Page<Movie>> in
+            .flatMap { [weak self] _ -> Observable<Event<Page<Movie>>> in
                 guard let self = self else { return .error(AppError.networkError) }
-                return self.useCase.getMovies(page: self.currentPage)
+                return self.useCase.getMovies(page: self.currentPage).materialize()
             }
             .stopLoadingOn(isLoadingSubject)
             .stopLoadingOn(isRefreshingSubject)
             .stopLoadingOn(isLoadingNextPageSubject)
-            .subscribe(onNext: { [weak self] page in
+            .subscribe(onNext: { [weak self] event in
                 guard let self = self else { return }
-                self.moviesCellsVMs = self.buildMoviesCellsVMs(page.results)
-                self.moviesCellsVMsSubject.onNext(self.moviesCellsVMs)
-            }, onError: { [weak self] error in
-                guard let self = self else { return }
-                debugPrint("error getting now playing Movies: \(error)")
-                self.isLoadingSubject.onNext(false)
-                self.isRefreshingSubject.onNext(false)
-                self.errorSubject.onNext(error as? AppError ?? .with(message: error.localizedDescription))
+                switch event {
+                case .next(let page):
+                    self.moviesCellsVMs = self.buildMoviesCellsVMs(page.results)
+                    self.moviesCellsVMsSubject.onNext(self.moviesCellsVMs)
+                case .error(let error):
+                    debugPrint("error getting now playing Movies: \(error)")
+                    self.isLoadingSubject.onNext(false)
+                    self.isRefreshingSubject.onNext(false)
+                    self.errorSubject.onNext(error as? AppError ?? .with(message: error.localizedDescription))
+                default:
+                    break
+                }
             })
             .disposed(by: disposeBag)
                 
@@ -114,19 +122,23 @@ class BrowseVM: ViewModel {
                 return self.currentPage < 999
             }
             .startLoadingOn(isLoadingNextPageSubject)
-            .flatMap { [weak self] _ -> Single<Page<Movie>> in
+            .flatMap { [weak self] _ -> Observable<Event<Page<Movie>>> in
                 guard let self = self else { return .error(AppError.networkError) }
-                return self.useCase.getMovies(page: self.currentPage)
+                return self.useCase.getMovies(page: self.currentPage).materialize()
             }
             .stopLoadingOn(isLoadingNextPageSubject)
-            .subscribe(onNext: { [weak self] page in
+            .subscribe(onNext: { [weak self] event in
                 guard let self = self else { return }
-                self.moviesCellsVMs += self.buildMoviesCellsVMs(page.results)
-                self.moviesCellsVMsSubject.onNext(self.moviesCellsVMs)
-            }, onError: { [weak self] error in
-                guard let self = self else { return }
-                debugPrint("error getting now playing Movies: \(error)")
-                self.isLoadingNextPageSubject.onNext(false)
+                switch event {
+                case .next(let page):
+                    self.moviesCellsVMs += self.buildMoviesCellsVMs(page.results)
+                    self.moviesCellsVMsSubject.onNext(self.moviesCellsVMs)
+                case .error(let error):
+                    debugPrint("error getting now playing Movies: \(error)")
+                    self.isLoadingNextPageSubject.onNext(false)
+                default:
+                    break
+                }
             })
             .disposed(by: disposeBag)
         

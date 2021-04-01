@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CommonCrypto
 
 extension String {
         
@@ -20,12 +19,16 @@ extension String {
         apiDateFormatter.dateFormat = "yyyy-MM-dd"
         
         let appDateFormatter = DateFormatter()
-        appDateFormatter.dateFormat = "d MMMM yyyy"
+        appDateFormatter.dateFormat = "d MMM yyyy"
         
         let apiDate = apiDateFormatter.date(from: self) ?? Date()
         return appDateFormatter.string(from: apiDate)
     }
 
+    static var imageBaseURL: String {
+        "https://image.tmdb.org/t/p/w500/"
+    }
+        
 }
 
 extension Optional where Wrapped == String {

@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Cima+
+
+  Created by Kerolles Roshdi on 4/1/21.
+  
+*/
+
+"error_offline" = "You appear to be offline, please check your connection";
+"error_networkError" = "Network error, please try again later";
+"error_notFound" = "not found";
+"error_empty" = "No data found, please try again";
+"error_timeout" = "your connection is too slow";
+"error_unauthorized" = "you're not allowed to see this!";
+"error_badRequest" = "please try again later";
+"error_serverError" = "Server error, please try again later";
+

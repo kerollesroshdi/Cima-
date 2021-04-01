@@ -13,6 +13,7 @@ enum AppRoute: Route {
     case topRated
     case search
     case movieDetails(id: Int)
+    case dismiss
 }
 
 class AppCoordinator: TabBarCoordinator<AppRoute> {
@@ -42,7 +43,7 @@ class AppCoordinator: TabBarCoordinator<AppRoute> {
                 useCase: BrowseUseCase(moviesRepository: MoviesRepositoryImpl(), browsing: .topRated)
             )
         )
-        let topRatedBarItem = TextyTabBarItem(title: "Top Rated", image: #imageLiteral(resourceName: "icon-star"), tag: 1)
+        let topRatedBarItem = TextyTabBarItem(title: "Top Rated", image: #imageLiteral(resourceName: "icon-like"), tag: 1)
         topRatedBarItem.color = DesignSystem.Color.topRated.UIColor
         topRated.tabBarItem = topRatedBarItem
         
@@ -71,11 +72,17 @@ class AppCoordinator: TabBarCoordinator<AppRoute> {
             return .select(index: 1)
         case .search:
             return .select(index: 2)
-        case .movieDetails:
-            let movieDetails = UIViewController()
-//            movieDetails.modalPresentationStyle = .overFullScreen
-            movieDetails.view.backgroundColor = .yellow
+        case .movieDetails(let id):
+            let movieDetails = MovieDetailsVC(
+                viewModel: MovieDetailsVM(
+                    router: weakRouter,
+                    useCase: MovieDetailsUseCase(movieID: id, moviesRepository: MoviesRepositoryImpl())
+                )
+            )
+            movieDetails.modalPresentationStyle = .overFullScreen
             return .present(movieDetails)
+        case .dismiss:
+            return .dismiss()
         }
     }
     

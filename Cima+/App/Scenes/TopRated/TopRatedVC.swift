@@ -30,7 +30,6 @@ class TopRatedVC: BaseViewController<BrowseVM> {
         indicator.isHidden = true
         return indicator
     }()
-    private let stateView = StateView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,14 +98,5 @@ class TopRatedVC: BaseViewController<BrowseVM> {
             .bind(to: viewModel.input.selectedMovie)
             .disposed(by: disposeBag)
     }
-
-    private func setupStateViewWith(_ error :AppError?) {
-        if let error = error {
-            view.addSubview(stateView)
-            stateView.center = view.center
-            stateView.setupWith(error)
-        } else {
-            stateView.removeFromSuperview()
-        }
-    }
+ 
 }
