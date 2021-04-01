@@ -52,6 +52,10 @@
 		C5786A7326152CC500EECECF /* XCoordinatorRx in Frameworks */ = {isa = PBXBuildFile; productRef = C5786A7226152CC500EECECF /* XCoordinatorRx */; };
 		C5786A812615303000EECECF /* TopRatedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5786A7F2615303000EECECF /* TopRatedVC.swift */; };
 		C5786A822615303000EECECF /* TopRatedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5786A802615303000EECECF /* TopRatedVC.xib */; };
+		C5A1D1DE2615BC2D00A84C87 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A1D1DC2615BC2D00A84C87 /* SearchVC.swift */; };
+		C5A1D1DF2615BC2D00A84C87 /* SearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A1D1DD2615BC2D00A84C87 /* SearchVC.xib */; };
+		C5A1D1E22615BC3F00A84C87 /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A1D1E12615BC3F00A84C87 /* SearchVM.swift */; };
+		C5A1D1E62615BFF100A84C87 /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A1D1E52615BFF100A84C87 /* SearchUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +99,10 @@
 		C5786A6D2615208300EECECF /* StateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StateView.xib; sourceTree = "<group>"; };
 		C5786A7F2615303000EECECF /* TopRatedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedVC.swift; sourceTree = "<group>"; };
 		C5786A802615303000EECECF /* TopRatedVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopRatedVC.xib; sourceTree = "<group>"; };
+		C5A1D1DC2615BC2D00A84C87 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		C5A1D1DD2615BC2D00A84C87 /* SearchVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchVC.xib; sourceTree = "<group>"; };
+		C5A1D1E12615BC3F00A84C87 /* SearchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVM.swift; sourceTree = "<group>"; };
+		C5A1D1E52615BFF100A84C87 /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +148,7 @@
 				C5786A7B26152F6800EECECF /* Common */,
 				C5786A432614EA5200EECECF /* NowPlaying */,
 				C5786A7826152DCC00EECECF /* TopRated */,
+				C5A1D1DB2615BC0D00A84C87 /* Search */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -200,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				C5786A6826150BDB00EECECF /* BrowseUseCase.swift */,
+				C5A1D1E52615BFF100A84C87 /* SearchUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -377,6 +387,16 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		C5A1D1DB2615BC0D00A84C87 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				C5A1D1E12615BC3F00A84C87 /* SearchVM.swift */,
+				C5A1D1DC2615BC2D00A84C87 /* SearchVC.swift */,
+				C5A1D1DD2615BC2D00A84C87 /* SearchVC.xib */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -450,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C51EECA82612583400C6B552 /* LaunchScreen.storyboard in Resources */,
+				C5A1D1DF2615BC2D00A84C87 /* SearchVC.xib in Resources */,
 				C5786A6F261520A000EECECF /* StateView.xib in Resources */,
 				C5786A482614EA9100EECECF /* NowPlayingVC.xib in Resources */,
 				C5786A532614FA5D00EECECF /* MovieCell.xib in Resources */,
@@ -465,6 +486,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5A1D1E62615BFF100A84C87 /* SearchUseCase.swift in Sources */,
+				C5A1D1E22615BC3F00A84C87 /* SearchVM.swift in Sources */,
 				C5786A5C2615058A00EECECF /* DesignSystem.swift in Sources */,
 				C5786A522614FA5D00EECECF /* MovieCell.swift in Sources */,
 				C51EECD026125C3E00C6B552 /* TextyTabBarController.swift in Sources */,
@@ -477,6 +500,7 @@
 				C51A2D6F261406540095E095 /* MoviesRepositoryImpl.swift in Sources */,
 				C5786A472614EA9100EECECF /* NowPlayingVC.swift in Sources */,
 				C5786A4B2614EAB100EECECF /* BrowseVM.swift in Sources */,
+				C5A1D1DE2615BC2D00A84C87 /* SearchVC.swift in Sources */,
 				C5786A5B2615058A00EECECF /* Color.swift in Sources */,
 				C51A2D3E2613C0DE0095E095 /* AppError.swift in Sources */,
 				C51A2D7F261407A80095E095 /* UICollectionViewNibExtension.swift in Sources */,

@@ -57,10 +57,10 @@
     </objects>
     <resources>
         <namedColor name="background">
-            <color red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.94099998474121094" green="0.94099998474121094" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="topRated">
-            <color red="1" green="0.78857637313250717" blue="0.26241568632230294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="1" green="0.78899997472763062" blue="0.26199999451637268" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

@@ -47,8 +47,12 @@ class AppCoordinator: TabBarCoordinator<AppRoute> {
         topRated.tabBarItem = topRatedBarItem
         
         // search
-        let search = UIViewController()
-        search.view.backgroundColor = .blue
+        let search = SearchVC(
+            viewModel: SearchVM(
+                router: weakRouter,
+                useCase: SearchUseCase(moviesRepository: MoviesRepositoryImpl())
+            )
+        )
         let searchBarItem = TextyTabBarItem(title: "Search", image: #imageLiteral(resourceName: "icon-search"), tag: 2)
         searchBarItem.color = DesignSystem.Color.search.UIColor
         search.tabBarItem = searchBarItem
