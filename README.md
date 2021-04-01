@@ -13,5 +13,6 @@ iOS Client App for TMDB
   - [x] [TMDB](https://developers.themoviedb.org/3)
   
  #### Screenshots:
- <img src="images/cima+nowplaying" width="300">  <img src="images/cima+toprated" width="300">  <img src="images/cima+search" width="300">
-  <img src="images/cima+wonderwoman" width="300">  <img src="images/cima+lethimgo" width="300">
+ <img src="images/cima+nowplaying.jpg" width="300">  <img src="images/cima+toprated.jpg" width="300">
+ 
+ <img src="images/cima+search.jpg" width="300"> <img src="images/cima+wonderwoman.jpg" width="300">  
