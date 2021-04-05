@@ -114,7 +114,7 @@
 		C5A1D1E92615D77E00A84C87 /* MovieDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsVC.swift; sourceTree = "<group>"; };
 		C5A1D1EA2615D77E00A84C87 /* MovieDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailsVC.xib; sourceTree = "<group>"; };
 		C5A1D1EE2615D79400A84C87 /* MovieDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsVM.swift; sourceTree = "<group>"; };
-		C5A1D1F22615E98500A84C87 /* MovieDetailsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieDetailsUseCase.swift; path = ../../../../../MovieDetailsUseCase.swift; sourceTree = "<group>"; };
+		C5A1D1F22615E98500A84C87 /* MovieDetailsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsUseCase.swift; sourceTree = "<group>"; };
 		C5A1D1F62615F27700A84C87 /* GenreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCell.swift; sourceTree = "<group>"; };
 		C5A1D1F72615F27700A84C87 /* GenreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreCell.xib; sourceTree = "<group>"; };
 		C5A1D20026161F7200A84C87 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
