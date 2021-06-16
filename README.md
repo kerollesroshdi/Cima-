@@ -1,7 +1,7 @@
 # Cima+ 
 iOS Client App for TMDB 
 
-![](https://img.shields.io/badge/Platform-iOS-orange)
+![](https://img.shields.io/badge/Platform-iOS-orange) ![GitHub forks](https://img.shields.io/github/forks/kerollesroshdi/Cima-?style=social) ![GitHub stars](https://img.shields.io/github/stars/kerollesroshdi/Cima-?style=social)
 
 #### Using:
  - [x] MVVM
