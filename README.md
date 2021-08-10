@@ -12,6 +12,9 @@ iOS Client App for TMDB
  #### API:
   - [x] [TMDB](https://developers.themoviedb.org/3)
   
+ #### Architecture:
+ <img src="images/iOS-App-Architecture.png" width="600">
+  
  #### Screenshots:
  <img src="images/cima+nowplaying.jpg" width="300">  <img src="images/cima+toprated.jpg" width="300">
  
